@@ -5,14 +5,14 @@ services:
     image: leantime/leantime:${LEAN_VERSION:-latest}
     container_name: leantime_app
     restart: unless-stopped
-    env_file: ./.env  # Opcional se usar as variáveis diretamente abaixo
+    env_file: ./.env  # Arquivo com variáveis de ambiente
     environment:
-      - LEAN_DB_HOST=interchange.proxy.rlwy.net
-      - LEAN_DB_PORT=51564
-      - LEAN_DB_USER=root
-      - LEAN_DB_PASSWORD=pPsREsZQUTnJOJYfHCNWXKZBFVWnCJyk
-      - LEAN_DB_DATABASE=railway
-      - LEAN_DB_SSL=true  # SSL obrigatório para conexões externas
+      - LEAN_DB_HOST
+      - LEAN_DB_PORT
+      - LEAN_DB_USER
+      - LEAN_DB_PASSWORD
+      - LEAN_DB_DATABASE
+      - LEAN_DB_SSL
     ports:
       - "${LEAN_PORT:-8081}:80"
     volumes:
