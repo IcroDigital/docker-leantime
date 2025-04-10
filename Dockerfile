@@ -79,10 +79,11 @@ WORKDIR /var/www/html
 # Install Leantime
 ARG LEAN_VERSION
 RUN set -ex; \
-    curl -fsSL --retry 3 https://github.com/Leantime/leantime/releases/download/v${LEAN_VERSION}/Leantime-v${LEAN_VERSION}.tar.gz -o leantime.tar.gz && \
+    curl -fsSL --retry 3 https://github.com/Leantime/leantime/releases/download/v3.4.11/Leantime-v3.4.11.tar.gz -o leantime.tar.gz && \
     tar xzf leantime.tar.gz --strip-components 1 && \
     rm leantime.tar.gz && \
     chown -R www-data:www-data .
+    
 
 # Set Permissions
 RUN set -ex; \
